@@ -1,14 +1,19 @@
-import { useState } from "react";
 import "./App.css";
-
-import ContactForm from "./components/ContactForm.jsx";
-import Apiloadercomp from "./components/APiloadercomp.jsx";
+import { Routes, Route } from "react-router-dom";
+import Home from "./components/Home";
+import About from "./components/About";
+import Navbar from "./components/Navbar";
+import Contact from "./components/Contact";
 
 function App() {
   return (
-    <div>
-      <ContactForm></ContactForm>
-      <Apiloadercomp></Apiloadercomp>
+    <div className="app-container">
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+      </Routes>
     </div>
   );
 }

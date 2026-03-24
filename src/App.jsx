@@ -1,20 +1,15 @@
-import "./App.css";
-import { Routes, Route } from "react-router-dom";
-import Home from "./components/Home";
-import About from "./components/About";
-import Navbar from "./components/Navbar";
-import Contact from "./components/Contact";
+import DashboardLayout from "./Layouts/DashboardLayout";
+import Sidebar from "./components/Sidebar";
+import Main from "./components/Main";
+import Footer from "./components/Footer";
 
 function App() {
   return (
-    <div className="app-container">
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
-      </Routes>
-    </div>
+    <DashboardLayout
+      sidebar={<Sidebar />}
+      main={<Main />}
+      footer={<Footer />}
+    />
   );
 }
 

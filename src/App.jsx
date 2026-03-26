@@ -1,15 +1,16 @@
-import DashboardLayout from "./Layouts/DashboardLayout";
-import Sidebar from "./components/Sidebar";
-import Main from "./components/Main";
-import Footer from "./components/Footer";
+import { useContext, useState } from "react";
+import FormReducer from "./components/FormReducer";
+import ThemeContext from "./store/THeme-Store";
+import Child from "./components/Child";
 
 function App() {
+  const [theme, setTheme] = useState("light");
   return (
-    <DashboardLayout
-      sidebar={<Sidebar />}
-      main={<Main />}
-      footer={<Footer />}
-    />
+    <ThemeContext.Provider value={{ theme, setTheme }}>
+      <div>
+        <Child />
+      </div>
+    </ThemeContext.Provider>
   );
 }
 
